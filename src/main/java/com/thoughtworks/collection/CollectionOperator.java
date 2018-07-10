@@ -16,11 +16,16 @@ public class CollectionOperator {
             Collections.reverse(collect);
             return collect;
         }
-
     }
 
     public List<Integer> getEvenListByIntervals(int left, int right) {
-        throw new NotImplementedException();
+        if (right > left) {
+            return IntStream.range(left, right + 1).boxed().collect(Collectors.toList()).stream().filter(x->x%2==0).collect(Collectors.toList());
+        }else{
+            List<Integer> collect = IntStream.range(right, left + 1).boxed().collect(Collectors.toList()).stream().filter(x->x%2==0).collect(Collectors.toList());
+            Collections.reverse(collect);
+            return collect;
+        }
     }
 
     public List<Integer> popEvenElments(int[] array) {
