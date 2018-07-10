@@ -62,6 +62,12 @@ public class Reduce {
     }
 
     public int getIndexOfLastOdd() {
-        throw new NotImplementedException();
+        AtomicInteger index = new AtomicInteger();
+        arrayList.forEach(x -> {
+            if (x % 2 == 1) {
+                index.set(x);
+            }
+        });
+        return arrayList.lastIndexOf(index.get());
     }
 }
