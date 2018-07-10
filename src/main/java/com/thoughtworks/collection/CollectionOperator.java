@@ -1,18 +1,12 @@
 package com.thoughtworks.collection;
 
-import com.sun.org.apache.bcel.internal.generic.RETURN;
-import org.apache.commons.collections.CollectionUtils;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 public class CollectionOperator {
     public List<Integer> getListByInterval(int left, int right) {
@@ -47,7 +41,7 @@ public class CollectionOperator {
     }
 
     public int popLastElment(int[] array) {
-        return array[array.length-1];
+        return array[array.length - 1];
     }
 
     public List<Integer> popCommonElement(int[] firstArray, int[] secondArray) {
@@ -57,6 +51,12 @@ public class CollectionOperator {
     }
 
     public List<Integer> addUncommonElement(Integer[] firstArray, Integer[] secondArray) {
-        throw new NotImplementedException();
+        List<Integer> list = new ArrayList<>();
+        List<Integer> firstList = Arrays.asList(firstArray);
+        List<Integer> secondList = Arrays.asList(secondArray);
+        List<Integer> collect = secondList.stream().filter(x -> !firstList.contains(x)).collect(Collectors.toList());
+        list.addAll(firstList);
+        list.addAll(collect);
+        return list;
     }
 }
