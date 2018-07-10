@@ -2,11 +2,21 @@ package com.thoughtworks.collection;
 
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class CollectionOperator {
     public List<Integer> getListByInterval(int left, int right) {
-        throw new NotImplementedException();
+        if (right > left) {
+            return IntStream.range(left, right + 1).boxed().collect(Collectors.toList());
+        }else{
+            List<Integer> collect = IntStream.range(right, left + 1).boxed().collect(Collectors.toList());
+            Collections.reverse(collect);
+            return collect;
+        }
+
     }
 
     public List<Integer> getEvenListByIntervals(int left, int right) {
