@@ -4,6 +4,7 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.lang.reflect.Array;
 import java.util.List;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -41,8 +42,15 @@ public class Add {
         return arrayList.stream().filter(x -> x % 2 == 1).reduce(0, (x, y) -> x + y * 3 + 5);
     }
 
-    public double getMedianOfEven(List<Integer> arrayList) {
+
+    public List<Integer> getProcessedList(List<Integer> arrayList) {
+//        return arrayList.stream().map()
         throw new NotImplementedException();
+    }
+
+    public double getMedianOfEven(List<Integer> arrayList) {
+        List<Integer> collect = arrayList.stream().filter(x -> x %2 == 0).sorted().collect(Collectors.toList());
+        return (collect.size() % 2 == 0) ? (collect.get((collect.size() - 1) / 2) + collect.get((collect.size()) / 2))/2: collect.get((collect.size()) / 2);
     }
 
     public double getAverageOfEven(List<Integer> arrayList) {
@@ -61,7 +69,4 @@ public class Add {
         throw new NotImplementedException();
     }
 
-    public List<Integer> getProcessedList(List<Integer> arrayList) {
-        throw new NotImplementedException();
-    }
 }
