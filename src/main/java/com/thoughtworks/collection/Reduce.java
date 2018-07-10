@@ -3,6 +3,8 @@ package com.thoughtworks.collection;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
 public class Reduce {
@@ -35,7 +37,15 @@ public class Reduce {
     }
 
     public int getIndexOfFirstEven() {
-        throw new NotImplementedException();
+        AtomicInteger index = new AtomicInteger();
+        AtomicBoolean first = new AtomicBoolean(true);
+        arrayList.forEach(x -> {
+            if (x % 2 == 0 && first.get()) {
+                index.set(x);
+                first.set(false);
+            }
+        });
+        return arrayList.indexOf(index.get());
     }
 
     public boolean isEqual(List<Integer> arrayList) {
