@@ -57,7 +57,8 @@ public class Reduce {
     }
 
     public int getLastOdd() {
-        throw new NotImplementedException();
+        arrayList =  arrayList.stream().filter(x -> x % 2 == 1).collect(Collectors.toList());
+        return arrayList.get(arrayList.size()-1);
     }
 
     public int getIndexOfLastOdd() {
