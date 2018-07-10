@@ -49,7 +49,11 @@ public class Reduce {
     }
 
     public boolean isEqual(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        if (arrayList.size()!=this.arrayList.size()) return false;
+        for (int i = 0; i < arrayList.size(); i++) {
+            if (!arrayList.get(i).equals(this.arrayList.get(i)))return false;
+        }
+        return true;
     }
 
     public Double getMedianInLinkList(SingleLink singleLink) {
@@ -57,8 +61,8 @@ public class Reduce {
     }
 
     public int getLastOdd() {
-        arrayList =  arrayList.stream().filter(x -> x % 2 == 1).collect(Collectors.toList());
-        return arrayList.get(arrayList.size()-1);
+        arrayList = arrayList.stream().filter(x -> x % 2 == 1).collect(Collectors.toList());
+        return arrayList.get(arrayList.size() - 1);
     }
 
     public int getIndexOfLastOdd() {
