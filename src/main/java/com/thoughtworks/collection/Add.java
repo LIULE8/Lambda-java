@@ -4,6 +4,7 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.lang.reflect.Array;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -44,7 +45,14 @@ public class Add {
 
 
     public List<Integer> getProcessedList(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        AtomicInteger temp = new AtomicInteger(0);
+        arrayList = arrayList.stream().map(x->{
+            int result = (x+temp.get())*3;
+            temp.set(x);
+            return result;
+        }).collect(Collectors.toList());
+        arrayList.remove(0);
+        return arrayList;
     }
 
     public double getMedianOfEven(List<Integer> arrayList) {
