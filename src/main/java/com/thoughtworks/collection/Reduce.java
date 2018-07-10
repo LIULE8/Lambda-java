@@ -3,6 +3,7 @@ package com.thoughtworks.collection;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Reduce {
 
@@ -13,11 +14,11 @@ public class Reduce {
     }
 
     public int getMaximum() {
-       return arrayList.stream().max((x,y)->(x-y)).get();
+        return arrayList.stream().max((x, y) -> (x - y)).get();
     }
 
     public double getMinimum() {
-        return arrayList.stream().min((x,y)->(x-y)).get();
+        return arrayList.stream().min((x, y) -> (x - y)).get();
     }
 
     public double getAverage() {
@@ -25,7 +26,8 @@ public class Reduce {
     }
 
     public double getOrderedMedian() {
-        throw new NotImplementedException();
+        List<Integer> collect = arrayList.stream().sorted().collect(Collectors.toList());
+        return (collect.size() % 2 == 0) ? (collect.get((collect.size()) / 2 - 1) + collect.get((collect.size()) / 2)) * 1.0 / 2 : collect.get((collect.size()) / 2);
     }
 
     public int getFirstEven() {
