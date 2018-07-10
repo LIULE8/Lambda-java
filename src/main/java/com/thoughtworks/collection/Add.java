@@ -3,10 +3,7 @@ package com.thoughtworks.collection;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.lang.reflect.Array;
-import java.util.List;
-import java.util.Optional;
-import java.util.OptionalDouble;
-import java.util.OptionalInt;
+import java.util.*;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -64,11 +61,16 @@ public class Add {
     }
 
     public List<Integer> getUnrepeatedFromEvenIndex(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        return arrayList.stream().filter(x -> x % 2 == 0).distinct().collect(Collectors.toList());
     }
 
     public List<Integer> sortByEvenAndOdd(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        List<Integer> list = new ArrayList<>();
+        List<Integer> evens = arrayList.stream().filter(x -> x % 2 == 0).sorted().collect(Collectors.toList());
+        List<Integer> add = arrayList.stream().filter(x -> x % 2 == 1).sorted((a, b) -> a > b ? -1 : 1).collect(Collectors.toList());
+        list.addAll(evens);
+        list.addAll(add);
+        return list;
     }
 
 }
