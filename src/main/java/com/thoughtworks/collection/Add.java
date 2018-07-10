@@ -15,7 +15,7 @@ public class Add {
             rightBorder = temp;
         }
         List<Integer> collect = IntStream.range(leftBorder, rightBorder + 1).boxed().collect(Collectors.toList());
-        return collect.parallelStream()
+        return collect.stream()
                 .filter(x -> x % 2 == 0).reduce(0, (x, y) -> x + y);
     }
 
@@ -26,11 +26,11 @@ public class Add {
             rightBorder = temp;
         }
         List<Integer> collect = IntStream.range(leftBorder, rightBorder + 1).boxed().collect(Collectors.toList());
-        return collect.parallelStream().filter(x -> x % 2 == 1).reduce(0, (x, y) -> x + y);
+        return collect.stream().filter(x -> x % 2 == 1).reduce(0, (x, y) -> x + y);
     }
 
     public int getSumTripleAndAddTwo(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        return arrayList.stream().reduce(0, (x, y) -> x + 3 * y + 2);
     }
 
     public List<Integer> getTripleOfOddAndAddTwo(List<Integer> arrayList) {
