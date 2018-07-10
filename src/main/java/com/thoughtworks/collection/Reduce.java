@@ -13,7 +13,7 @@ public class Reduce {
     }
 
     public int getMaximum() {
-        throw new NotImplementedException();
+       return arrayList.stream().max((x,y)->(x-y)).get();
     }
 
     public double getMinimum() {
