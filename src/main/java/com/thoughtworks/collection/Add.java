@@ -75,7 +75,7 @@ public class Add {
     public List<Integer> sortByEvenAndOdd(List<Integer> arrayList) {
         List<Integer> list = new ArrayList<>();
         List<Integer> evens = arrayList.stream().filter(x -> x % 2 == 0).sorted().collect(Collectors.toList());
-        List<Integer> add = arrayList.stream().filter(x -> x % 2 == 1).sorted((a, b) -> a > b ? -1 : 1).collect(Collectors.toList());
+        List<Integer> add = arrayList.stream().filter(x -> x % 2 == 1).sorted(Comparator.reverseOrder()).collect(Collectors.toList());
         list.addAll(evens);
         list.addAll(add);
         return list;
