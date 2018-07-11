@@ -46,8 +46,8 @@ public class Add {
 
     public List<Integer> getProcessedList(List<Integer> arrayList) {
         AtomicInteger temp = new AtomicInteger(0);
-        arrayList = arrayList.stream().map(x->{
-            int result = (x+temp.get())*3;
+        arrayList = arrayList.stream().map(x -> {
+            int result = (x + temp.get()) * 3;
             temp.set(x);
             return result;
         }).collect(Collectors.toList());
@@ -57,7 +57,7 @@ public class Add {
 
     public double getMedianOfEven(List<Integer> arrayList) {
         List<Integer> collect = arrayList.stream().filter(x -> x % 2 == 0).sorted().collect(Collectors.toList());
-        return (collect.size() % 2 == 0) ? (collect.get((collect.size() - 1) / 2) + collect.get((collect.size()) / 2)) / 2 : collect.get((collect.size()) / 2);
+        return (collect.size() % 2 == 0) ? (collect.get((collect.size()) / 2 - 1) + collect.get((collect.size()) / 2)) * 1.0 / 2 : collect.get((collect.size()) / 2) * 1.0;
     }
 
     public double getAverageOfEven(List<Integer> arrayList) {

@@ -2,6 +2,7 @@ package com.thoughtworks.collection;
 
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -49,15 +50,20 @@ public class Reduce {
     }
 
     public boolean isEqual(List<Integer> arrayList) {
-        if (arrayList.size()!=this.arrayList.size()) return false;
+        if (arrayList.size() != this.arrayList.size()) return false;
         for (int i = 0; i < arrayList.size(); i++) {
-            if (!arrayList.get(i).equals(this.arrayList.get(i)))return false;
+            if (!arrayList.get(i).equals(this.arrayList.get(i))) return false;
         }
         return true;
     }
 
     public Double getMedianInLinkList(SingleLink singleLink) {
-        throw new NotImplementedException();
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < arrayList.size(); i++) {
+            if (singleLink.getNode(i) != null) list.add((Integer)singleLink.getNode(i));
+        }
+        List<Integer> collect = list.stream().sorted().collect(Collectors.toList());
+        return (collect.size() % 2 == 0) ? (collect.get((collect.size()) / 2 - 1) + collect.get((collect.size()) / 2)) * 1.0 / 2 : collect.get((collect.size()) / 2) * 1.0;
     }
 
     public int getLastOdd() {
