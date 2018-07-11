@@ -26,7 +26,9 @@ public class MyMap {
     }
 
     public List<String> mapLetters() {
-        throw new NotImplementedException();
+        return array.stream().map(x -> (x / 26 == 0 ? (char) (x + 96) + "" : (x % 26 == 0 ? ((char) (x / 26 - 1 + 96) + "") :
+                ((char) (x / 26 + 96) + "")) + (x % 26 == 0 ? ((char) (26 + 96) + "") : (char) (x % 26 + 96) + ""))).
+                collect(Collectors.toList());
     }
 
     public List<Integer> sortFromBig() {
