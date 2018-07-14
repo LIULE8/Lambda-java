@@ -17,8 +17,7 @@ public class Add {
             rightBorder = temp;
         }
         List<Integer> collect = IntStream.range(leftBorder, rightBorder + 1).boxed().collect(Collectors.toList());
-        return collect.stream()
-                .filter(x -> x % 2 == 0).reduce(0, (x, y) -> x + y);
+        return collect.stream().filter(x -> x % 2 == 0).reduce(0, (x, y) -> x + y);
     }
 
     public int getSumOfOdds(int leftBorder, int rightBorder) {
@@ -45,14 +44,13 @@ public class Add {
 
 
     public List<Integer> getProcessedList(List<Integer> arrayList) {
-        AtomicInteger temp = new AtomicInteger(0);
-        arrayList = arrayList.stream().map(x -> {
-            int result = (x + temp.get()) * 3;
-            temp.set(x);
-            return result;
-        }).collect(Collectors.toList());
-        arrayList.remove(0);
-        return arrayList;
+        List<Integer> result = new ArrayList<>();
+        arrayList.stream().reduce((num1, num2) -> {
+            Integer sum = (num1 + num2) * 3;
+            result.add(sum);
+            return num2;
+        });
+        return result;
     }
 
     public double getMedianOfEven(List<Integer> arrayList) {
@@ -73,12 +71,10 @@ public class Add {
     }
 
     public List<Integer> sortByEvenAndOdd(List<Integer> arrayList) {
-        List<Integer> list = new ArrayList<>();
         List<Integer> evens = arrayList.stream().filter(x -> x % 2 == 0).sorted().collect(Collectors.toList());
         List<Integer> add = arrayList.stream().filter(x -> x % 2 == 1).sorted(Comparator.reverseOrder()).collect(Collectors.toList());
-        list.addAll(evens);
-        list.addAll(add);
-        return list;
+        evens.addAll(add);
+        return evens;
     }
 
 }
