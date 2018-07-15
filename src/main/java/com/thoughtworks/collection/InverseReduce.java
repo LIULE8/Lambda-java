@@ -3,6 +3,7 @@ package com.thoughtworks.collection;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
@@ -20,8 +21,6 @@ public class InverseReduce {
     }
 
     public List<Integer> divideToSmaller(int number) {
-        List<Integer> collect = IntStream.range(0, number - 1).boxed().collect(Collectors.toList());
-        Collections.reverse(collect);
-        return collect.stream().filter(x -> (number - x) % 2 == 0).collect(Collectors.toList());
+        return IntStream.range(0, number - 1).boxed().sorted(Comparator.reverseOrder()).filter(x -> (number - x) % 2 == 0).collect(Collectors.toList());
     }
 }
