@@ -3,6 +3,7 @@ package com.thoughtworks.collection;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -22,17 +23,33 @@ public class MyMap {
     }
 
     public List<String> mapLetter() {
-        return array.stream().map(x -> (char) (x + 96) + "").collect(Collectors.toList());
+//        return array.stream().map(x -> (char) (x + 96) + "").collect(Collectors.toList());
+        return array.stream().map(x -> letterList.get(x - 1)).collect(Collectors.toList());
     }
 
     public List<String> mapLetters() {
-        return array.stream().map(x -> (x / 26 == 0 ? (char) (x + 96) + "" : (x % 26 == 0 ? ((char) (x / 26 - 1 + 96) + "") :
-                ((char) (x / 26 + 96) + "")) + (x % 26 == 0 ? ((char) (26 + 96) + "") : (char) (x % 26 + 96) + ""))).
-                collect(Collectors.toList());
+//        return array.stream().map(x -> (x / 26 == 0 ? (char) (x + 96) + "" : (x % 26 == 0 ? ((char) (x / 26 - 1 + 96) + "") :
+//                ((char) (x / 26 + 96) + "")) + (x % 26 == 0 ? ((char) (26 + 96) + "") : (char) (x % 26 + 96) + ""))).
+//                collect(Collectors.toList());
+        return array.stream().map(num -> {
+            num = num - 1;
+            int letterSize = letterList.size();
+
+            String resultStr;
+            if (num >= letterSize) {
+                int baseLocateNum = num % letterSize;
+                int MultipleLocateNumLocateNum = num / (letterSize) - 1;
+                resultStr = letterList.get(MultipleLocateNumLocateNum) + letterList.get(baseLocateNum);
+            } else {
+                resultStr = letterList.get(num);
+            }
+            return resultStr;
+
+        }).collect(Collectors.toList());
     }
 
     public List<Integer> sortFromBig() {
-        return array.stream().sorted((x, y) -> (x > y) ? -1 : 1).collect(Collectors.toList());
+        return array.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
     }
 
     public List<Integer> sortFromSmall() {
