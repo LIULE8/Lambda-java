@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Reduce {
 
@@ -30,7 +31,7 @@ public class Reduce {
 
     public double getOrderedMedian() {
         List<Integer> collect = arrayList.stream().sorted().collect(Collectors.toList());
-        return (collect.size() % 2 == 0) ? (collect.get((collect.size()) / 2 - 1) + collect.get((collect.size()) / 2)) * 1.0 / 2 : collect.get((collect.size()) / 2);
+        return (collect.size() % 2 == 0) ? (collect.get((collect.size()) / 2 - 1) + collect.get((collect.size()) / 2)) * 1.0 / 2 : collect.get((collect.size()) / 2) * 1.0;
     }
 
     public int getFirstEven() {
@@ -38,46 +39,36 @@ public class Reduce {
     }
 
     public int getIndexOfFirstEven() {
-        AtomicInteger index = new AtomicInteger();
-        AtomicBoolean first = new AtomicBoolean(true);
-        arrayList.forEach(x -> {
-            if (x % 2 == 0 && first.get()) {
-                index.set(x);
-                first.set(false);
-            }
-        });
-        return arrayList.indexOf(index.get());
+        Integer integer = arrayList.stream().filter(x -> x % 2 == 0).findFirst().get();
+        return arrayList.indexOf(integer);
     }
 
     public boolean isEqual(List<Integer> arrayList) {
-        if (arrayList.size() != this.arrayList.size()) return false;
-        for (int i = 0; i < arrayList.size(); i++) {
-            if (!arrayList.get(i).equals(this.arrayList.get(i))) return false;
+        Boolean isEqual = false;
+        if (arrayList.size() == this.arrayList.size()) {
+            isEqual = IntStream.range(0, arrayList.size())
+                    .allMatch(index -> this.arrayList.get(index).equals(arrayList.get(index)));
         }
-        return true;
+        return isEqual;
     }
 
     public Double getMedianInLinkList(SingleLink singleLink) {
-        List<Integer> list = new ArrayList<>();
-        for (int i = 0; i < arrayList.size(); i++) {
-            if (singleLink.getNode(i) != null) list.add((Integer)singleLink.getNode(i));
+        int index = arrayList.size() / 2;
+        if (arrayList.size() % 2 == 0) {
+            return ((Integer) singleLink.getNode(index) + (Integer) singleLink.getNode(index + 1)) / 2.0;
+        } else {
+            return (Integer) singleLink.getNode(index + 1) * 1.0;
         }
-        List<Integer> collect = list.stream().sorted().collect(Collectors.toList());
-        return (collect.size() % 2 == 0) ? (collect.get((collect.size()) / 2 - 1) + collect.get((collect.size()) / 2)) * 1.0 / 2 : collect.get((collect.size()) / 2) * 1.0;
     }
 
     public int getLastOdd() {
-        arrayList = arrayList.stream().filter(x -> x % 2 == 1).collect(Collectors.toList());
-        return arrayList.get(arrayList.size() - 1);
+//        arrayList = arrayList.stream().filter(x -> x % 2 == 1).collect(Collectors.toList());
+//        return arrayList.get(arrayList.size() - 1);
+        return arrayList.stream().filter(x -> x % 2 == 1).reduce((first, second) -> second).get();
     }
 
     public int getIndexOfLastOdd() {
-        AtomicInteger index = new AtomicInteger();
-        arrayList.forEach(x -> {
-            if (x % 2 == 1) {
-                index.set(x);
-            }
-        });
-        return arrayList.lastIndexOf(index.get());
+        Integer integer = arrayList.stream().filter(x -> x % 2 == 1).reduce((first, second) -> second).get();
+        return arrayList.indexOf(integer);
     }
 }
