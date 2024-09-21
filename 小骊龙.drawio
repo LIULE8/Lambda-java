@@ -294,7 +294,7 @@
         <mxCell id="G3JIJTOK4R4ZPR2njA6u-99" value="第二下躲避" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
           <mxGeometry x="3020" y="380" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="G3JIJTOK4R4ZPR2njA6u-101" value="第三下接慢识破" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+        <mxCell id="G3JIJTOK4R4ZPR2njA6u-101" value="第三下接识破" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
           <mxGeometry x="3220" y="380" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
