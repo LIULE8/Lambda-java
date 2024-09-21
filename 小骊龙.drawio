@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0" version="24.7.16">
   <diagram name="第 1 页" id="0NVcYtt5c4hPnMqfbpFV">
-    <mxGraphModel dx="4146" dy="1115" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="4301" dy="1174" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -275,6 +275,27 @@
         </mxCell>
         <mxCell id="G3JIJTOK4R4ZPR2njA6u-94" value="定风珠" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
           <mxGeometry x="2320" y="540" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="G3JIJTOK4R4ZPR2njA6u-98" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="G3JIJTOK4R4ZPR2njA6u-96" target="G3JIJTOK4R4ZPR2njA6u-97">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="G3JIJTOK4R4ZPR2njA6u-96" value="举起双锤，敲三下" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" vertex="1" parent="1">
+          <mxGeometry x="2820" y="240" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="G3JIJTOK4R4ZPR2njA6u-100" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="G3JIJTOK4R4ZPR2njA6u-97" target="G3JIJTOK4R4ZPR2njA6u-99">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="G3JIJTOK4R4ZPR2njA6u-97" value="第一下躲避" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="2820" y="380" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="G3JIJTOK4R4ZPR2njA6u-102" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="G3JIJTOK4R4ZPR2njA6u-99" target="G3JIJTOK4R4ZPR2njA6u-101">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="G3JIJTOK4R4ZPR2njA6u-99" value="第二下躲避" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="3020" y="380" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="G3JIJTOK4R4ZPR2njA6u-101" value="第三下接慢识破" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="3220" y="380" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
