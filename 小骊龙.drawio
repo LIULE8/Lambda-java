@@ -119,6 +119,27 @@
         <mxCell id="G3JIJTOK4R4ZPR2njA6u-40" value="打两下" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
           <mxGeometry x="270" y="730" width="120" height="60" as="geometry" />
         </mxCell>
+        <mxCell id="G3JIJTOK4R4ZPR2njA6u-44" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="G3JIJTOK4R4ZPR2njA6u-42" target="G3JIJTOK4R4ZPR2njA6u-43">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="G3JIJTOK4R4ZPR2njA6u-42" value="左抬手三连摆锤" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="680" y="170" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="G3JIJTOK4R4ZPR2njA6u-46" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="G3JIJTOK4R4ZPR2njA6u-43" target="G3JIJTOK4R4ZPR2njA6u-45">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="G3JIJTOK4R4ZPR2njA6u-43" value="躲三次" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="680" y="310" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="G3JIJTOK4R4ZPR2njA6u-48" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="G3JIJTOK4R4ZPR2njA6u-45" target="G3JIJTOK4R4ZPR2njA6u-47">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="G3JIJTOK4R4ZPR2njA6u-45" value="锤子往回收" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="680" y="450" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="G3JIJTOK4R4ZPR2njA6u-47" value="识破" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="680" y="590" width="120" height="60" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
