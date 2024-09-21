@@ -270,10 +270,10 @@
         <mxCell id="G3JIJTOK4R4ZPR2njA6u-90" value="有两豆" style="rhombus;whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
           <mxGeometry x="2520" y="370" width="80" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="G3JIJTOK4R4ZPR2njA6u-92" value="X+Y+Y" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+        <mxCell id="G3JIJTOK4R4ZPR2njA6u-92" value="X+Y+Y" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
           <mxGeometry x="2660" y="380" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="G3JIJTOK4R4ZPR2njA6u-94" value="定风珠" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+        <mxCell id="G3JIJTOK4R4ZPR2njA6u-94" value="定风珠" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
           <mxGeometry x="2500" y="540" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
